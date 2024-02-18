@@ -1,4 +1,4 @@
-function taskList() {
+function TaskList() {
   return (
     <div>
       TaskForm
@@ -6,4 +6,4 @@ function taskList() {
   )
 }
 
-export default taskList
+export default TaskList
