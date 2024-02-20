@@ -1,9 +1,5 @@
 function TaskList() {
-  return (
-    <div>
-      TaskForm
-    </div>
-  )
+  return <div>TaskForm</div>;
 }
 
-export default TaskList
+export default TaskList;
