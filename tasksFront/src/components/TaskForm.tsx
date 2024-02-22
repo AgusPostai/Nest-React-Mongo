@@ -36,7 +36,8 @@ function TaskForm() {
           ></textarea>
 
           <label htmlFor="">
-            <input type="checkbox" />
+            <input type="checkbox" className="h-5 w-5 text-indigo-600" 
+            onChange={(e) => setTask({...task, done: !task.done})}/>
             <span>Done</span>
           </label>
           <button>Save</button>
