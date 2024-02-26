@@ -1,17 +1,16 @@
-const API = "http://localhost:3000"
+const API = "http://localhost:3000";
 
 interface Task {
-    title: string;
-    description?: string;
-    done?: boolean;
+  title: string;
+  description?: string;
+  done?: boolean;
 }
 
-
-export const createTaskRequest = (task: Task) => 
-fetch (`${API}/tasks`, {
+export const createTaskRequest = (task: Task) =>
+  fetch(`${API}/tasks`, {
     method: "POST",
     body: JSON.stringify(task),
     headers: {
-        "Content-Type" : "application/json"
-    } 
-})
+      "Content-Type": "application/json",
+    },
+  });
