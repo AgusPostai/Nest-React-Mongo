@@ -20,7 +20,6 @@ function TaskForm() {
     console.log(data);
   };
 
-  
   return (
     <div>
       <form onSubmit={handleSubmit}>
