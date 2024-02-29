@@ -1,10 +1,6 @@
 const API = "http://localhost:3000/api";
+import { Task } from "../interfaces/task.interface";
 
-interface Task {
-  title: string;
-  description?: string;
-  done?: boolean;
-}
 
 
 export const createTaskRequest = (task: Task) =>
