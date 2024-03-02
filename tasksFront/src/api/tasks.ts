@@ -11,3 +11,5 @@ export const createTaskRequest = (task: Task) =>
       "Content-Type": "application/json",
     },
   });
+
+  export const getTaskRequest = () => fetch(`${API}/tasks`)

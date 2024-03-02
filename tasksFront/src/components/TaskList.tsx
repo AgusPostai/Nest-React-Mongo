@@ -1,5 +1,16 @@
+import { useEffect } from "react";
+import { getTaskRequest } from "../api/tasks";
+
 function TaskList() {
-  return <div>TaskForm</div>;
+
+  useEffect(() => {
+getTaskRequest()
+.then((response) => response.json())
+.then((data) => console.log(data))
+  }, [])
+
+  return (<div>TaskForm</div>
+  )
 }
 
 export default TaskList;
