@@ -1,20 +1,22 @@
-import { createContext } from "react";
-import TaskList from "../components/TaskList";
+import { createContext, useState } from "react";
 
-const TaskContext = createContext({
-        tasks: [],
-})
+export const TaskContext = createContext({
+  tasks: [],
+});
 
 interface Props {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
-export const TaskProvider: React.FC<Props> = ({children}) => {
-    return(
-<TaskContext.Provider value= {{
-    tasks,
-}}>
-    {children}
+export const TaskProvider: React.FC<Props> = ({ children }) => {
+  const [tasks, setTasks] = useState([]);
+  return (
+    <TaskContext.Provider
+      value={{
+        tasks,
+      }}
+    >
+      {children}
     </TaskContext.Provider>
-    )
-}
+  );
+};
