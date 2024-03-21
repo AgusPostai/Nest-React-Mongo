@@ -1,5 +1,6 @@
 import { FormEvent, ChangeEvent, useState } from "react";
 import { createTaskRequest } from "../api/tasks";
+import { useTasks } from "../context/useTasks";
 
 function TaskForm() {
   const [task, setTask] = useState({
@@ -7,6 +8,9 @@ function TaskForm() {
     description: "",
     done: false,
   });
+
+  const { tasks } = useTasks();
+  console.log(tasks);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
