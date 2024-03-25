@@ -1,13 +1,15 @@
 import { createContext, useState, useEffect } from "react";
 import { getTaskRequest } from "../api/tasks";
-import { Task } from "../interfaces/task.interface";
+import { CreateTask, Task } from "../interfaces/task.interface";
 
 interface TaskContextValue {
   tasks: Task[];
+  createTask: (task: CreateTask) => void;
 }
 
 export const TaskContext = createContext<TaskContextValue>({
   tasks: [],
+  createTask: () => {}
 });
 
 interface Props {
@@ -22,10 +24,16 @@ export const TaskProvider: React.FC<Props> = ({ children }) => {
       .then((data) => setTasks(data));
   }, []);
 
+  const createTask = (task:CreateTask) => {
+    console.log(task)
+  }
+
+
   return (
     <TaskContext.Provider
       value={{
         tasks,
+        createTask,
       }}
     >
       {children}

@@ -9,8 +9,6 @@ function TaskForm() {
     done: false,
   });
 
-  const { tasks } = useTasks();
-  console.log(tasks);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
