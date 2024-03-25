@@ -9,6 +9,8 @@ function TaskForm() {
     done: false,
   });
 
+  const {createTask} = useTasks()
+
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -16,10 +18,7 @@ function TaskForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(task);
-    const res = await createTaskRequest(task);
-    const data = await res.json();
-    console.log(data);
+    createTask(task)
   };
 
   return (

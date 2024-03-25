@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
-import { getTaskRequest } from "../api/tasks";
-import { CreateTask, Task } from "../interfaces/task.interface";
+import { getTaskRequest, createTaskRequest} from "../api/tasks";
+import { CreateTask, Task} from "../interfaces/task.interface";
 
 interface TaskContextValue {
   tasks: Task[];
@@ -24,8 +24,11 @@ export const TaskProvider: React.FC<Props> = ({ children }) => {
       .then((data) => setTasks(data));
   }, []);
 
-  const createTask = (task:CreateTask) => {
+  const createTask = async (task:CreateTask) => {
     console.log(task)
+     const res = await createTaskRequest(task);
+     const data = await res.json();
+    setTasks([...tasks, data])
   }
 
 
