@@ -1,10 +1,8 @@
 import { useTasks } from "../context/useTasks";
 
 function TaskList() {
- 
- const {tasks} = useTasks()
+  const { tasks } = useTasks();
 
- 
   return (
     <div>
       {tasks.map((task) => (

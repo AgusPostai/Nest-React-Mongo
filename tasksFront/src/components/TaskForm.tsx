@@ -9,8 +9,7 @@ function TaskForm() {
     done: false,
   });
 
-  const {createTask} = useTasks()
-
+  const { createTask } = useTasks();
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -18,7 +17,7 @@ function TaskForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    createTask(task)
+    createTask(task);
   };
 
   return (
