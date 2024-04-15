@@ -51,7 +51,9 @@ export const TaskProvider: React.FC<Props> = ({ children }) => {
     const res = await updateTaskRequest(id, task);
     const data = await res.json();
 
-    console.log(data);
+    setTasks(
+      tasks.map((task) => (task._id === id ? { ...task, ...data } : task))
+    );
   };
 
   return (
