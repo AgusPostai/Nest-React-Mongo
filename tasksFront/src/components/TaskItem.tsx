@@ -1,6 +1,6 @@
 import { Task } from "../interfaces/task.interface";
 import { useTasks } from "../context/useTasks";
-import {IoCheckmarkDone, IoTrash} from "react-icons/io5"
+// import {IoCheckmarkDone, IoTrash} from "react-icons/io5"
 
 interface Props {
   task: Task;
@@ -19,7 +19,7 @@ function TaskItem({ task }: Props) {
       </div>
 
       <div className="flex gap-x-2">
-        <IoCheckmarkDone
+        <button
           onClick={() => {
             updateTask(task._id, {
               done: !task.done,
@@ -27,13 +27,13 @@ function TaskItem({ task }: Props) {
           }}
         />
 
-
-
-        <IoTrash
+        <button
           onClick={async () => {
             if (
               !window.confirm(
-                "estas seguro de que queres eliminar esta tarea? "))
+                "estas seguro de que queres eliminar esta tarea? "
+              )
+            )
               return;
             await deleteTask(task._id);
           }}
