@@ -27,6 +27,8 @@ function TaskItem({ task }: Props) {
           }}
         />
 
+
+
         <IoTrash
           onClick={async () => {
             if (
